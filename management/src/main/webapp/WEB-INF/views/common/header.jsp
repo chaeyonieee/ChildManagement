@@ -1,38 +1,95 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<c:set var="contextPath" value="${pageContext.request.contextPath }" />
-<% request.setCharacterEncoding("utf-8"); %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>헤더</title>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
 </head>
 <body>
-	<table border=0 width="100%">
-		<tr>
-			<td>
-				<a href="${contextPath}/main.do">
-				<img src="${contextPath}/resources/image/world-g9476be42f_640.png" width="150px" height="150px"/>
-				</a>
-			</td>
-			<td>
-				<h1><font size="20">학사관리 홈페이지</font></h1>
-			</td>
-			<td>
-				<c:choose>
-					<c:when test="${isLogOn==true && member!=null}">
-						<h3><font size="13"></font>환영합니다. ${member.name}님!</font></h3>
-						<a href="${contextPath}/member/logout.do"><h3>로그아웃</h3></a>
-					</c:when>
-					<c:otherwise>
-						<a href="${contextPath}/member/loginForm.do"><h3>로그인</h3></a>
-					</c:otherwise>
-				</c:choose>
-			</td>
-		</tr>
-	</table>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href=""${contextPath }/views/index.html" class="logo d-flex align-items-center">
+        <img src="/management/resources/assets/image/LOGO.png" alt="lofo">
+        <span class="d-none d-lg-block">Seniors Manager</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <img src="/management/resources/assets/image/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Hwang Chaeyeon(Admin)</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Hwang Chaeyeon</h6>
+              <span>Center Director</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/management/profile">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/management/profile">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
 </body>
 </html>
