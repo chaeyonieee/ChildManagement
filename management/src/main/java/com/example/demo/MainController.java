@@ -12,4 +12,10 @@ public class MainController {
         System.out.println("시험이당");
         return "main";
     }
+    
+    @RequestMapping("/member/registerForm")
+    public String index1(Model model) {
+        System.out.println("/member/registerForm");
+        return "/member/registerForm";
+    }
 }
