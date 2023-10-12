@@ -38,20 +38,16 @@ public class MemberControllerImpl implements MemberController {
 
 			memberService.insertMemberWithMap(MemRegisterMap);
 
-			mav = Alert.alertAndRedirect("회원가입이 완료되었습니다.", request.getContextPath() + "/member/loginForm.do");
+			mav = Alert.alertAndRedirect("Your account has been registered.", request.getContextPath() + "/member/loginForm.do");
 		} catch (Exception e) {
 			e.printStackTrace();
 			mav.addAllObjects(MemRegisterMap);
-			mav = Alert.alertAndRedirect("오류가 일어나 가입하지 못 했습니다.",
+			mav = Alert.alertAndRedirect("Failed to create due to error",
 					request.getContextPath() + "/member/registerForm.do");
 		}
 		System.out.println(mav);
 		return mav;
 		
 	}
-//	   @RequestMapping("/member/register.do")
-//	    public String index1(Model model) {
-//	        System.out.println("/member/registerForm");
-//	        return "/member/registerForm";
-//	    }
+
 }

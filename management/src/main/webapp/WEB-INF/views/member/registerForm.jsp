@@ -50,6 +50,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
     <!-- Template Main CSS File -->
     <link href="${contextPath}/css/style.css" rel="stylesheet" />
+    <link href="${contextPath}/css/register.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="${contextPath}/js/registerForm1.js" rel="stylesheet" />
   </head>
@@ -90,7 +91,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       action="${contextPath}/member/register.do"
                     >
                       <div class="col-12">
-                        <div class="form-label">ID</div>
+                        <div class="flex_sbet">
+                          <div class="form-label">ID</div>
+                          <button class="btn btn-primary btn_nobg">
+                            Check Duplicate
+                          </button>
+                        </div>
                         <input
                           id="id"
                           name="id"
@@ -212,13 +218,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
                           <div class="col-12">
                             <button
-                              class="btn btn-primary w-100"
+                              class="btn btn-primary w-100 btn_nobg"
                               type="button"
-                              style="
-                                background-color: transparent;
-                                color: #212529;
-                                border-width: 2px;
-                              "
                               onclick="execDaumPostCode()"
                             >
                               Search
