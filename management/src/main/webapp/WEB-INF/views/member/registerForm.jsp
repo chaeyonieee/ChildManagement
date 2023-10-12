@@ -86,7 +86,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       class="row g-3 needs-validation needs-validation1"
                       novalidate
                       id="registerForm"
-                      method="post"
+                      method="POST"
+                      action="${contextPath}/member/register.do"
                     >
                       <div class="col-12">
                         <div class="form-label">ID</div>
@@ -120,7 +121,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                         <div class="form-label">Confirm Password</div>
                         <input
                           type="password"
-                          name="password2"
                           id="password2"
                           class="form-control"
                           required
@@ -146,11 +146,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="col-12">
                         <div class="form-label">Username</div>
                         <div class="input-group has-validation">
-                          <input
-                            name="username"
-                            class="form-control"
-                            required
-                          />
+                          <input name="name" class="form-control" required />
                           <div class="invalid-feedback">
                             Please enter username!
                           </div>
@@ -160,11 +156,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="col-12">
                         <div class="form-label">Phone Number</div>
                         <div class="input-group has-validation">
-                          <input
-                            name="phonenumber"
-                            class="form-control"
-                            required
-                          />
+                          <input name="phone" class="form-control" required />
                           <div class="invalid-feedback">
                             Please enter your phone number!
                           </div>
