@@ -87,7 +87,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       </div>
                       <div class="col-12">
                         <button class="btn btn-primary w-100" type="submit">
-                          Administrator (Principal) Registration
+                          <a
+                            href="${contextPath}/member/registerForm.do"
+                            class="a1"
+                          >
+                            Administrator (Principal) Registration</a
+                          >
                         </button>
                       </div>
 

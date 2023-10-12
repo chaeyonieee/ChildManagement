@@ -20,12 +20,17 @@ body {
 }
 
 a {
-  color: #4154f1;
+  color: #4154f1;;
   text-decoration: none;
 }
 
 a:hover {
   color: #717ff5;
+  text-decoration: none;
+}
+
+.a1{
+color: #fff;
   text-decoration: none;
 }
 
