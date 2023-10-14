@@ -42,4 +42,14 @@
 
 	</insert>
 	
+	
+	<select id="login" resultType="memberVO"
+		parameterType="java.util.Map">
+     <![CDATA[
+      select * from member 
+	   where 
+	   id=#{id} and password1=#{password1}	
+     ]]>
+	</select>
+	
 </mapper>
