@@ -31,15 +31,6 @@ public class MainControllerImpl implements MainController {
 	}
 	
 
-	@RequestMapping(value = "/member/login.do", method = { RequestMethod.POST, RequestMethod.GET })
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HttpSession session;
-		ModelAndView mav = new ModelAndView();
-		String viewName = (String) request.getAttribute("viewName");
-		mav.setViewName(viewName);
 
-		return mav;
-	}
-	
 
 }

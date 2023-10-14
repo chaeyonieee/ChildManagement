@@ -44,7 +44,12 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                       </p>
                     </div>
 
-                    <form class="row g-3 needs-validation1" novalidate>
+                    <form
+                      class="row g-3 needs-validation1"
+                      novalidate
+                      method="POST"
+                      action="${contextPath}/member/login.do"
+                    >
                       <div class="col-12">
                         <label for="yourUsername" class="form-label">ID</label>
                         <div class="input-group has-validation">
@@ -84,7 +89,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                             type="checkbox"
                             name="remember"
                             value="true"
-                            id="rememberMe"
+                            id="idSaveCheck"
                           />
                           <label class="form-check-label" for="rememberMe"
                             >Remember me</label
@@ -131,21 +136,57 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
     ></a>
   </body>
   <script>
-    var needsValidation = document.querySelectorAll(".needs-validation1");
+    $(document).ready(function () {
+      var key = getCookie("key");
+      $("#id").val(key);
 
-    Array.prototype.slice.call(needsValidation).forEach(function (form) {
-      form.addEventListener(
-        "submit",
-        function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
+      if ($("#id").val() != "") {
+        $("#idSaveCheck").attr("checked", true);
+      }
 
-          form.classList.add("was-validated");
-        },
-        false
-      );
+      $("#idSaveCheck").change(function () {
+        if ($("#idSaveCheck").is(":checked")) {
+          setCookie("key", $("#id").val(), 7);
+        } else {
+          deleteCookie("key");
+        }
+      });
+
+      $("#id").keyup(function () {
+        if ($("#idSaveCheck").is(":checked")) {
+          setCookie("key", $("#id").val(), 7);
+        }
+      });
     });
+
+    function setCookie(cookieName, value, exdays) {
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + exdays);
+      var cookieValue =
+        escape(value) +
+        (exdays == null ? "" : "; expires=" + exdate.toGMTString());
+      document.cookie = cookieName + "=" + cookieValue;
+    }
+
+    function deleteCookie(cookieName) {
+      var expireDate = new Date();
+      expireDate.setDate(expireDate.getDate() - 1);
+      document.cookie =
+        cookieName + "= " + "; expires=" + expireDate.toGMTString();
+    }
+
+    function getCookie(cookieName) {
+      cookieName = cookieName + "=";
+      var cookieData = document.cookie;
+      var start = cookieData.indexOf(cookieName);
+      var cookieValue = "";
+      if (start != -1) {
+        start += cookieName.length;
+        var end = cookieData.indexOf(";", start);
+        if (end == -1) end = cookieData.length;
+        cookieValue = cookieData.substring(start, end);
+      }
+      return unescape(cookieValue);
+    }
   </script>
 </html>

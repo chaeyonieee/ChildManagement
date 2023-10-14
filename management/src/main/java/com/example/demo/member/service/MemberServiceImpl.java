@@ -40,6 +40,15 @@ public class MemberServiceImpl implements MemberService {
 		memberDAO.insertNurserWithMap(nurseRegisterMap);
 	}
 
+
+
+
+	@Override
+	public MemberVO login(Map loginMap) {
+		
+		return memberDAO.login(loginMap);
+	}
+
 	
 
 	

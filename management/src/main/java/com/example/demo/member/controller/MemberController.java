@@ -10,6 +10,7 @@ import com.example.demo.vo.MemberVO;
 public interface MemberController {	
 	public ModelAndView Register(HttpServletRequest request)throws Exception;
 	public ModelAndView nurseRegister(HttpServletRequest request)throws Exception;
+	public ModelAndView login(HttpServletRequest request)throws Exception;
 
 	
 }
