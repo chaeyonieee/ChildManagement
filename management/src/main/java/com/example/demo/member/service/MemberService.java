@@ -10,7 +10,6 @@ public interface MemberService {
 	
 
 	public int registerInfoNo() throws Exception;
-
 	public void insertMemberWithMap(Map MemRegisterMap) throws Exception;
-
+	public void insertNurserWithMap(Map nurseRegisterMap) throws Exception;
 }

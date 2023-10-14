@@ -26,12 +26,18 @@ public class MemberServiceImpl implements MemberService {
 		return MemberNo;
 	}
 
+
 	
 
 	@Override
 	@Transactional
 	public void insertMemberWithMap(Map MemRegisterMap) throws Exception{
 		memberDAO.insertMemberWithMap(MemRegisterMap);
+	}
+	@Override
+	@Transactional
+	public void insertNurserWithMap(Map nurseRegisterMap) throws Exception{
+		memberDAO.insertNurserWithMap(nurseRegisterMap);
 	}
 
 	
