@@ -49,5 +49,36 @@ public class MemberControllerImpl implements MemberController {
 		return mav;
 		
 	}
+	@Override
 
+	@RequestMapping(value="/member/nurseRegister.do", method = RequestMethod.POST)
+	public ModelAndView nurseRegister(HttpServletRequest request) throws IOException {
+		String viewName = (String) request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView(viewName);
+		Map nurseRegisterMap = GeneralFileUploader.getParameterMap(request);
+		System.out.println("nurseRegister입니다");
+		try {
+			int memberNo = memberService.registerInfoNo(); 
+			nurseRegisterMap.put("memberNo", memberNo);
+			String zipCode = (String) nurseRegisterMap.get("zipCode");
+			if (zipCode == null || zipCode.trim().length() < 1) {
+				nurseRegisterMap.put("zipCode", 0);
+			}
+			System.out.println(nurseRegisterMap);
+
+			memberService.insertNurserWithMap(nurseRegisterMap);
+
+			mav = Alert.alertAndRedirect("Your account has been registered.", request.getContextPath() + "/member/loginForm.do");
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			mav.addAllObjects(nurseRegisterMap);
+			mav = Alert.alertAndRedirect("Failed to create due to error",
+					request.getContextPath() + "/member/nurseRegisterForm.do");
+		}
+		System.out.println(mav);
+		return mav;
+		
+	}
 }

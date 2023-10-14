@@ -13,5 +13,5 @@ public interface MemberDAO {
 	public int registerInfoNo() throws DataAccessException;
 
 	public void insertMemberWithMap(Map MemRegisterMap);
-
+	public void insertNurserWithMap(Map nurseRegisterMap);
 }

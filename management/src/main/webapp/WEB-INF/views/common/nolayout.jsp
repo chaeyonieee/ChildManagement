@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html;isELIgnored="false"%> <%@ taglib
-uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%> <%@ taglib prefix ="c"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" isELIgnored="false"%> <%@ taglib uri
+="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix ="c"
 uri ="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,6 +48,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
     <!-- Template Main CSS File -->
     <link href="${contextPath}/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="${contextPath}/css/register.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <tiles:insertAttribute name="body" />
@@ -60,6 +62,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
   <script src="${contextPath}/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="${contextPath}/vendor/tinymce/tinymce.min.js"></script>
   <script src="${contextPath}/vendor/php-email-form/validate.js"></script>
+  <script src="${contextPath}/js/registerForm1.js"></script>
 
   <!-- Template Main JS File -->
   <script src="${contextPath}/js/main.js"></script>

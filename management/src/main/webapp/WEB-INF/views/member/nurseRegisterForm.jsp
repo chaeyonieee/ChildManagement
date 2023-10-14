@@ -10,7 +10,13 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>RegisterForm</title>
+    <script>
+      function input() {
+       const type = document.querySelector("#input_type").value;
+       console.log(type);
+    </script>
+
+    <title>NurseRegisterForm</title>
   </head>
 
   <body>
@@ -37,7 +43,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                   <div class="card-body">
                     <div class="pb-2">
                       <h5 class="card-title text-center pb-0 fs-4">
-                        Create Administrator(Principal) Account
+                        Join Our Care Team
                       </h5>
                     </div>
 
@@ -46,7 +52,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                       novalidate
                       id="registerForm"
                       method="POST"
-                      action="${contextPath}/member/register.do"
+                      action="${contextPath}/member/nurseRegister.do"
                     >
                       <div class="col-12">
                         <div class="flex_sbet">
@@ -123,6 +129,31 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                           <input name="phone" class="form-control" required />
                           <div class="invalid-feedback">
                             Please enter your phone number!
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-label">Types</div>
+                        <div class="input-group has-validation">
+                          <select
+                            id="type"
+                            name="type"
+                            class="form-control"
+                            required
+                          >
+                            <option value="Certified Nursing Assistant(CNA)">
+                              Certified Nursing Assistant(CNA)
+                            </option>
+                            <option value="Nursing Supervisor">
+                              Nursing Supervisor
+                            </option>
+                            <option value="Personal Care Aide">
+                              Personal Care Aide
+                            </option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select your profession!
                           </div>
                         </div>
                       </div>
