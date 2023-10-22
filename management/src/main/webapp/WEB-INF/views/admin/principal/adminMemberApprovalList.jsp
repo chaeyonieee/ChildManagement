@@ -32,63 +32,58 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
       <!-- End Page Title -->
 
       <section class="section">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card" style="width: 78em">
-              <div class="card-body">
-                <h5 class="card-title">ElderCare Team Sign-up Approval</h5>
-                <!--
-                <form
-                  method="post"
-                  action="${contextPath}/admin/principal/adminMemberApprovalList.do"
-                >-->
-                <!-- List group With Checkboxes and radios -->
-                <table class="table">
-                  <!-- datatable -->
-                  <thead>
-                    <tr>
-                      <th scope="col">
-                        <input
-                          class="form-check-input me-1"
-                          type="checkbox"
-                          name=""
-                        />
-                      </th>
-                      <th style="margin-right: 30px !important">No</th>
-                      <th scope="col">ID</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Type</th>
-                      <th scope="col">Sign up Date</th>
-                    </tr>
-                    <c:forEach var="member" items="${memberList}">
-                      ><c:choose
-                        ><c:when test="${member.memberNo != PreMemberNo}">
-                          <tr>
-                            <div>
-                              <td scope="col">
-                                <input
-                                  class="form-check-input me-1"
-                                  type="checkbox"
-                                  name=""
-                                />
-                              </td>
-                              <td>${member.memberNo}</td>
-                              <td>${member.id}</td>
-                              <td>${member.name}</td>
-                              <td>${member.type}</td>
-                              <td>${member.creDate}</td>
-                            </div>
-                          </tr></c:when
-                        >
-                      </c:choose>
-                      <c:set var="PreMemberNo" value="${member.memberNo}" />
-                    </c:forEach>
-                  </thead>
-                </table>
-
-                <!-- End List Checkboxes and radios -->
-              </div>
-            </div>
+        <div class="card" style="width: 68em">
+          <div class="card-body">
+            <h5 class="card-title">ElderCare Team Sign-up Approval</h5>
+            <form
+              method="post"
+              action="${contextPath}/admin/principal/adminMemberApprovalList.do"
+            >
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>
+                      <input
+                        class="form-check-input me-1"
+                        type="checkbox"
+                        name=""
+                      />
+                    </th>
+                    <th style="margin-right: 30px !important">No</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Sign up Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <c:forEach var="member" items="${adminMemberApprovalList}">
+                    ><c:choose
+                      ><c:when test="${member.memberNo != PreMemberNo}">
+                        <tr>
+                          <div>
+                            <td scope="col">
+                              <input
+                                class="form-check-input me-1"
+                                type="checkbox"
+                                name=""
+                              />
+                            </td>
+                            <td>${member.memberNo}</td>
+                            <td>${member.id}</td>
+                            <td>${member.name}</td>
+                            <td>${member.type}</td>
+                            <td>${member.creDate}</td>
+                          </div>
+                        </tr></c:when
+                      >
+                    </c:choose>
+                    <c:set var="PreMemberNo" value="${member.memberNo}" />
+                  </c:forEach>
+                </tbody>
+              </table>
+            </form>
+            <!-- End List Checkboxes and radios -->
           </div>
         </div>
       </section>

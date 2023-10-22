@@ -24,7 +24,7 @@ public class AdminMemberControllerImpl implements AdminMemberController {
 	@Autowired
 	private AdminMemberService adminMemberService;
 
-	@RequestMapping(value = "/admin/principal/adminMemberApprovalList", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/admin/principal/adminMemberApprovalList.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView adminMemberApprovalList(HttpServletRequest request) throws Exception {
 		System.out.println("HERE adminMemberApprovalList");
 		request.setCharacterEncoding("utf-8");
