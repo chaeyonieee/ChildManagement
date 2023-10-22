@@ -30,7 +30,19 @@ public class MainControllerImpl implements MainController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/index.do", method = { RequestMethod.POST, RequestMethod.GET })
+	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session;
+		ModelAndView mav = new ModelAndView();
+		String viewName = (String) request.getAttribute("viewName");
+		mav.setViewName(viewName);
 
+		return mav;
+	}
+	
+	
+
+	
 
 
 }

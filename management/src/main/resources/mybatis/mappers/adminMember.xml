@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.member.dao.MemberDAO">
+	<resultMap id="AdminMemberResult" type="memberVO">
+		<result property="memberNo" column="memberNo" />
+		<result property="type" column="type" />
+		<result property="id" column="id" />
+		<result property="password1" column="password1" />
+		<result property="email" column="email" />
+		<result property="name" column="name" />
+		<result property="phone" column="phone" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="address_detail" column="address_detail" />
+		<result property="creDate" column="creDate" />
+	</resultMap>
+	
+		<select id="adminMemberApprovalList" resultMap="AdminMemberResult" parameterType="java.util.Map">
+	
+		select * from member
+		where 1=1
+		</select>
+	
+	</mapper>

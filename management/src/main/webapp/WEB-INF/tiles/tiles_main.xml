@@ -9,6 +9,18 @@
 		<put-attribute name="body" value="" />
 	</definition>
 
+	<definition name="mainPageLayout"
+		template="/WEB-INF/views/common/nolayout.jsp">
+		<put-attribute name="title" value="레이아웃 페이지" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/side.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
 
 	<definition name="main" extends="mainLayout">
 		<put-attribute name="title" value="메인페이지" />
@@ -16,6 +28,17 @@
 			value="/WEB-INF/views/main.jsp" />
 	</definition>
 
+	<definition name="index" extends="mainPageLayout">
+		<put-attribute name="title" value="메인페이지2" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/index.jsp" />
+	</definition>
+	
+	<definition name="admin/principal/adminMemberApprovalList" extends="mainPageLayout">
+		<put-attribute name="title" value="메인페이지2" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/principal/adminMemberApprovalList.jsp" />
+	</definition>
 
 
 </tiles-definitions>
