@@ -9,5 +9,4 @@ import com.example.demo.vo.MemberVO;
 public interface AdminMemberService {
 
 	List<MemberVO> adminMemberApprovalList(Map memberMap);
-
 }

@@ -50,7 +50,7 @@ uri ="http://java.sun.com/jsp/jstl/core" %>
             </li>
 
             <li>
-              <a href="components-breadcrumbs.html">
+              <a href="${contextPath}/admin/principal/adminMemberApprovalList.do">
                 <i class="bi bi-circle"></i><span>Teacher Aproval</span>
               </a>
             </li>

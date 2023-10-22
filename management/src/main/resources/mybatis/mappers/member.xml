@@ -29,7 +29,7 @@
 	<insert id="insertMemberWithMap" parameterType="java.util.Map">
 		insert into
 		member(memberNo, type, id, password1, name, email, phone, address,address_detail,zipCode)
-		values(#{memberNo}, "원장", #{id}, #{password1}, #{name}, #{email}, #{phone}, #{address},
+		values(#{memberNo}, "principal", #{id}, #{password1}, #{name}, #{email}, #{phone}, #{address},
 		#{address_detail}, #{zipCode})
 
 	</insert>

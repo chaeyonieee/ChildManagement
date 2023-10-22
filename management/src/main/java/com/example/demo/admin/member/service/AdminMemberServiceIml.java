@@ -19,6 +19,5 @@ public class AdminMemberServiceIml implements AdminMemberService {
 		return adminMemberDAO.adminMemberApprovalList(memberMap);
 	}
 
-
 	
 }
