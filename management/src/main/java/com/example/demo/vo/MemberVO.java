@@ -17,7 +17,7 @@ public class MemberVO {
 	private String address;
 	private String address_detail;
 	private Date creDate;
-	
+	private String approval;
 	
 	
 	public int getMemberNo() {
@@ -157,7 +157,20 @@ public class MemberVO {
 		return "MemberVO [memberNo=" + memberNo + ", type=" + type + ", id=" + id + ", password1=" + password1 + ", name=" + name
 				+ ", email=" + email + ", phone=" + phone 
 				+ ", zipCode=" + zipCode + ", address=" + address + ", address_detail=" + address_detail + ", creDate="
-				+ creDate  + "]";
+				+ creDate  + ", approval ="
+						+ approval +"]";
+	}
+
+
+
+	public String getApproval() {
+		return approval;
+	}
+
+
+
+	public void setApproval(String approval) {
+		this.approval = approval;
 	}
 	
 	

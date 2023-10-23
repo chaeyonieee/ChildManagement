@@ -9,12 +9,6 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      .btn-position {
-        float: right;
-        margin: 0 84px 24px;
-      }
-    </style>
   </head>
   <body>
     <!-- ======= Header ======= -->
@@ -40,7 +34,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
       <section class="section">
         <div class="card" style="width: 68em">
           <div class="card-body">
-            <h5 class="card-title">ElderCare Team Sign-up Approval</h5>
+            <h5 class="card-title">ElderCare Team List</h5>
 
             <form
               method="post"
@@ -54,7 +48,7 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                     <th scope="col">Name</th>
                     <th scope="col">Type</th>
                     <th scope="col">Sign up Date</th>
-                    <th scope="col">Approval Status</th>
+                    <th scope="col">Modify</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -70,8 +64,8 @@ uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> <%@ taglib prefix
                             <td>${member.creDate}</td>
                             <td>
                               <a
-                                href="${contextPath}/seller/goods/sellerGoodsModForm.do?memberNo=${member.memberNo}"
-                                >${member.approval}</a
+                                href="${contextPath}/admin/principal/adminTeamModForm.do?memberNo=${member.memberNo}"
+                                >modify</a
                               >
                             </td>
                           </div>

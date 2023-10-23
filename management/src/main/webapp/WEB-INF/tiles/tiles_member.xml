@@ -11,23 +11,25 @@
 
 
 
-<definition name="member/registerForm" extends="mainLayout">
+	<definition name="member/registerForm" extends="mainLayout">
 		<put-attribute name="title" value="원장 등록창" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/registerForm.jsp" />
 	</definition>
-	
-	<definition name="member/nurseRegisterForm" extends="mainLayout">
+
+	<definition name="member/nurseRegisterForm"
+		extends="mainLayout">
 		<put-attribute name="title" value="교사 등록창" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/nurseRegisterForm.jsp" />
 	</definition>
 
-<definition name="member/loginForm" extends="mainLayout">
+	<definition name="member/loginForm" extends="mainLayout">
 		<put-attribute name="title" value="로그인창" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/loginForm.jsp" />
 	</definition>
+
 
 </tiles-definitions>
 

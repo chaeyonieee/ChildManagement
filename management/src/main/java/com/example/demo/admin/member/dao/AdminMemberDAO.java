@@ -7,7 +7,6 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 import org.springframework.stereotype.Repository;
-
 import com.example.demo.vo.MemberVO;
 
 
@@ -19,7 +18,7 @@ public interface AdminMemberDAO {
 
 
 	public List<MemberVO> adminMemberApprovalList(Map memberMap);
-
+	public MemberVO selectMemberByMemberNo(int memberNo);
 
 
 }
