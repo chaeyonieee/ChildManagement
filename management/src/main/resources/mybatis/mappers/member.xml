@@ -16,6 +16,7 @@
 		<result property="address" column="address" />
 		<result property="address_detail" column="address_detail" />
 		<result property="creDate" column="creDate" />
+		<result property="approval" column="approval" />
 	</resultMap>
 	
 	
@@ -28,17 +29,17 @@
 	
 	<insert id="insertMemberWithMap" parameterType="java.util.Map">
 		insert into
-		member(memberNo, type, id, password1, name, email, phone, address,address_detail,zipCode)
+		member(memberNo, type, id, password1, name, email, phone, address,address_detail,zipCode,approval)
 		values(#{memberNo}, "principal", #{id}, #{password1}, #{name}, #{email}, #{phone}, #{address},
-		#{address_detail}, #{zipCode})
+		#{address_detail}, #{zipCode},#{No})
 
 	</insert>
 	
 	<insert id="insertNurserWithMap" parameterType="java.util.Map">
 		insert into
-		member(memberNo, type, id, password1, name, email, phone, address,address_detail,zipCode)
+		member(memberNo, type, id, password1, name, email, phone, address,address_detail,zipCode,approval)
 		values(#{memberNo}, #{type}, #{id}, #{password1}, #{name}, #{email}, #{phone}, #{address},
-		#{address_detail}, #{zipCode})
+		#{address_detail}, #{zipCode},#{No})
 
 	</insert>
 	

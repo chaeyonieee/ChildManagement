@@ -40,6 +40,18 @@
 			value="/WEB-INF/views/admin/principal/adminMemberApprovalList.jsp" />
 	</definition>
 
+<definition name="admin/principal/teamList" extends="mainPageLayout">
+		<put-attribute name="title" value="메인페이지2" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/principal/teamList.jsp" />
+	</definition>
+
+<definition name="admin/principal/adminTeamModForm" extends="mainPageLayout">
+		<put-attribute name="title" value="메인페이지2" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/principal/adminTeamModForm.jsp" />
+	</definition>
+
 
 </tiles-definitions>
 

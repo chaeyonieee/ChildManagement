@@ -1,5 +1,6 @@
 package com.example.demo.admin.member.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.admin.member.service.AdminMemberService;
 import com.example.demo.common.file.GeneralFileUploader;
+
 import com.example.demo.vo.MemberVO;
+
 
 @Controller("adminMemberController")
 public class AdminMemberControllerImpl implements AdminMemberController {
@@ -37,5 +40,34 @@ public class AdminMemberControllerImpl implements AdminMemberController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/admin/principal/teamList.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView teamList(HttpServletRequest request) throws Exception {
+		System.out.println("HERE adminMemberApprovalList");
+		request.setCharacterEncoding("utf-8");
+		String viewName = (String) request.getAttribute("viewName");
+		Map memberMap = GeneralFileUploader.getParameterMap(request);
+		List<MemberVO> adminMemberApprovalList = adminMemberService.adminMemberApprovalList(memberMap);
+		ModelAndView mav = new ModelAndView(viewName);
+		mav.addObject("adminMemberApprovalList", adminMemberApprovalList);
+		System.out.println(mav);
+		return mav;
+	}
 
+	@RequestMapping(value = "/admin/principal/adminTeamModForm.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView adminTeamModForm(HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
+		System.out.println("HERE adminTeamModForm");
+		request.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
+		String viewName = (String) request.getAttribute("viewName");
+		int memberNo = (Integer.parseInt(request.getParameter("memberNo")));
+		System.out.println("memberNo="+memberNo);
+		MemberVO adminTeamModForm = adminMemberService.selectMemberByMemberNo(memberNo);
+		System.out.println("memberNo=" + memberNo);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName(viewName);
+		mav.addObject("memberNo", memberNo);
+		return mav;
+	}
+	
 }

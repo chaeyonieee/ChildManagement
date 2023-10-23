@@ -19,5 +19,9 @@ public class AdminMemberServiceIml implements AdminMemberService {
 		return adminMemberDAO.adminMemberApprovalList(memberMap);
 	}
 
+	@Override
+	public MemberVO selectMemberByMemberNo(int memberNo) {
+		return adminMemberDAO.selectMemberByMemberNo(memberNo);
+	}
 	
 }
